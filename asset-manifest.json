@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/flutter-portfolio/static/css/main.6ff6b725.css",
-    "main.js": "/flutter-portfolio/static/js/main.438a5bf8.js",
-    "static/js/453.3a134b05.chunk.js": "/flutter-portfolio/static/js/453.3a134b05.chunk.js",
-    "index.html": "/flutter-portfolio/index.html",
-    "main.6ff6b725.css.map": "/flutter-portfolio/static/css/main.6ff6b725.css.map",
-    "main.438a5bf8.js.map": "/flutter-portfolio/static/js/main.438a5bf8.js.map",
-    "453.3a134b05.chunk.js.map": "/flutter-portfolio/static/js/453.3a134b05.chunk.js.map"
+    "main.css": "/JungSemi_Portfolio/static/css/main.6ff6b725.css",
+    "main.js": "/JungSemi_Portfolio/static/js/main.0dd465a1.js",
+    "static/js/453.fe6b90ac.chunk.js": "/JungSemi_Portfolio/static/js/453.fe6b90ac.chunk.js",
+    "index.html": "/JungSemi_Portfolio/index.html",
+    "main.6ff6b725.css.map": "/JungSemi_Portfolio/static/css/main.6ff6b725.css.map",
+    "main.0dd465a1.js.map": "/JungSemi_Portfolio/static/js/main.0dd465a1.js.map",
+    "453.fe6b90ac.chunk.js.map": "/JungSemi_Portfolio/static/js/453.fe6b90ac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6ff6b725.css",
-    "static/js/main.438a5bf8.js"
+    "static/js/main.0dd465a1.js"
   ]
 }
