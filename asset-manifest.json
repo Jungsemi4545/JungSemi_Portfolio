@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/flutter-portfolio/static/css/main.6ff6b725.css",
+    "main.js": "/flutter-portfolio/static/js/main.438a5bf8.js",
+    "static/js/453.3a134b05.chunk.js": "/flutter-portfolio/static/js/453.3a134b05.chunk.js",
+    "index.html": "/flutter-portfolio/index.html",
+    "main.6ff6b725.css.map": "/flutter-portfolio/static/css/main.6ff6b725.css.map",
+    "main.438a5bf8.js.map": "/flutter-portfolio/static/js/main.438a5bf8.js.map",
+    "453.3a134b05.chunk.js.map": "/flutter-portfolio/static/js/453.3a134b05.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ff6b725.css",
+    "static/js/main.438a5bf8.js"
+  ]
+}
