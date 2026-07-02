@@ -74,13 +74,6 @@ const projects = [
   },
 ];
 
-const categoryColors = {
-  Mobile: '#54C5F8',
-  Tablet: '#01B4BC',
-  Desktop: '#764ABC',
-  Web: '#F7B731',
-};
-
 const Projects = () => {
   const { isDark } = useTheme();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
