@@ -1,0 +1,274 @@
+/* ===================== CSS VARIABLES ===================== */
+:root {
+  --flutter-blue: #54C5F8;
+  --flutter-sky: #01B4BC;
+  --flutter-navy: #0553B1;
+  --accent: #54C5F8;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* ===================== THEME ===================== */
+.dark {
+  --bg: #0D1117;
+  --bg2: #161B22;
+  --bg3: #21262D;
+  --text: #E6EDF3;
+  --text2: #8B949E;
+  --border: rgba(255,255,255,0.08);
+  --card-bg: #161B22;
+  --nav-bg: rgba(13,17,23,0.9);
+}
+.light {
+  --bg: #F6F8FA;
+  --bg2: #FFFFFF;
+  --bg3: #EAF0F6;
+  --text: #1C2128;
+  --text2: #57606A;
+  --border: rgba(0,0,0,0.08);
+  --card-bg: #FFFFFF;
+  --nav-bg: rgba(246,248,250,0.9);
+}
+
+/* ===================== GLOBAL ===================== */
+.App { overflow-x: hidden; }
+
+section.section {
+  background: var(--bg);
+  color: var(--text);
+  padding: 90px 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-header { text-align: center; margin-bottom: 56px; }
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.title-underline {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--flutter-blue), var(--flutter-sky));
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+.section-sub { margin-top: 14px; color: var(--text2); font-size: 1rem; }
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 40px;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+.navbar.scrolled {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--border);
+}
+.nav-logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
+.logo-bracket { color: var(--flutter-blue); }
+.logo-text { color: var(--text); }
+.nav-links { display: flex; list-style: none; gap: 32px; }
+.nav-links a {
+  color: var(--text2); text-decoration: none; font-size: 0.9rem;
+  font-weight: 500; cursor: pointer; transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--flutter-blue); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.theme-toggle {
+  background: none; border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 10px; cursor: pointer; font-size: 1rem; transition: border-color var(--transition);
+}
+.theme-toggle:hover { border-color: var(--flutter-blue); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 100px 40px 60px; position: relative; overflow: hidden;
+  background: var(--bg); color: var(--text); gap: 60px; flex-wrap: wrap;
+}
+.bg-widgets { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.bg-widget {
+  position: absolute; font-family: 'Courier New', monospace; font-size: 0.75rem;
+  color: var(--flutter-blue); opacity: 0.08; white-space: nowrap;
+  animation: float 6s ease-in-out infinite;
+}
+.widget-0 { top: 15%; left: 5%; animation-delay: 0s; }
+.widget-1 { top: 35%; left: 82%; animation-delay: 1s; }
+.widget-2 { top: 60%; left: 10%; animation-delay: 2s; }
+.widget-3 { top: 75%; left: 70%; animation-delay: 0.5s; }
+.widget-4 { top: 20%; left: 60%; animation-delay: 1.5s; }
+.widget-5 { top: 85%; left: 40%; animation-delay: 3s; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.hero-content { max-width: 560px; position: relative; z-index: 1; }
+.hero-greeting { color: var(--flutter-blue); font-size: 1.1rem; font-weight: 500; margin-bottom: 8px; }
+.hero-name { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; letter-spacing: -0.03em; color: var(--text); margin-bottom: 8px; }
+.hero-title { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 600; color: var(--flutter-blue); margin-bottom: 20px; min-height: 2.2rem; }
+.cursor { animation: blink 1s step-end infinite; color: var(--flutter-sky); }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.hero-bio { color: var(--text2); line-height: 1.8; margin-bottom: 32px; font-size: 1.05rem; }
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--flutter-blue), var(--flutter-sky));
+  color: #fff; border: none; padding: 13px 28px; border-radius: 8px;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(84,197,248,0.3); }
+.btn-outline {
+  background: transparent; color: var(--flutter-blue); border: 2px solid var(--flutter-blue);
+  padding: 11px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-outline:hover { background: rgba(84,197,248,0.08); transform: translateY(-2px); }
+.hero-visual { position: relative; z-index: 1; }
+.phone-mockup {
+  width: 220px; height: 420px; border: 3px solid var(--flutter-blue);
+  border-radius: 36px; background: var(--bg2); padding: 12px;
+  box-shadow: 0 0 40px rgba(84,197,248,0.15), 0 20px 60px rgba(0,0,0,0.3);
+  animation: phoneFloat 4s ease-in-out infinite;
+}
+@keyframes phoneFloat { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-12px) rotate(-2deg); } }
+.phone-screen { width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: var(--bg3); display: flex; flex-direction: column; }
+.app-bar { background: linear-gradient(135deg, var(--flutter-blue), var(--flutter-navy)); color: #fff; padding: 14px 16px 10px; font-size: 0.85rem; font-weight: 700; }
+.app-content { flex: 1; padding: 16px; position: relative; }
+.card-item { height: 70px; background: var(--bg2); border-radius: 10px; margin-bottom: 10px; border: 1px solid var(--border); }
+.card-item.short { height: 45px; }
+.fab {
+  position: absolute; bottom: 16px; right: 16px; width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--flutter-blue), var(--flutter-sky));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.3rem; font-weight: 300; box-shadow: 0 4px 12px rgba(84,197,248,0.4);
+}
+.scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); text-align: center; cursor: pointer; }
+.scroll-hint span { color: var(--text2); font-size: 0.75rem; letter-spacing: 0.1em; }
+.scroll-arrow { color: var(--flutter-blue); font-size: 1.2rem; animation: bounce 2s ease-in-out infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* ===================== ABOUT ===================== */
+.about { background: var(--bg2) !important; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.about-text p { color: var(--text2); line-height: 1.9; margin-bottom: 16px; font-size: 1rem; }
+.about-text strong { color: var(--flutter-blue); font-weight: 600; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.stat-card {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; text-align: center; transition: transform var(--transition), box-shadow var(--transition);
+}
+.stat-card:last-child { grid-column: 1 / -1; }
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(84,197,248,0.12); border-color: var(--flutter-blue); }
+.stat-number { display: block; font-size: 2.2rem; font-weight: 900; color: var(--flutter-blue); letter-spacing: -0.02em; }
+.stat-label { display: block; font-size: 0.8rem; color: var(--text2); margin-top: 6px; line-height: 1.5; }
+
+/* ===================== SKILLS ===================== */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.skill-group {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px; transition: box-shadow var(--transition);
+}
+.skill-group:hover { box-shadow: 0 8px 32px rgba(84,197,248,0.1); }
+.skill-group-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.skill-icon { font-size: 1.4rem; }
+.skill-group-header h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
+.skill-item { margin-bottom: 16px; }
+.skill-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.88rem; color: var(--text2); }
+.skill-percent { color: var(--flutter-blue); font-weight: 600; }
+.skill-bar { height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+.skill-fill { height: 100%; background: linear-gradient(90deg, var(--flutter-blue), var(--flutter-sky)); border-radius: 3px; }
+
+/* ===================== EXPERIENCE ===================== */
+.experience { background: var(--bg2) !important; }
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--flutter-blue), transparent); }
+.timeline-item { position: relative; margin-bottom: 48px; }
+.timeline-dot {
+  position: absolute; left: -39px; top: 6px; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--flutter-blue); border: 3px solid var(--bg2);
+  box-shadow: 0 0 0 3px rgba(84,197,248,0.3);
+}
+.timeline-content {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px; transition: box-shadow var(--transition);
+}
+.timeline-content:hover { box-shadow: 0 8px 32px rgba(84,197,248,0.1); border-color: rgba(84,197,248,0.3); }
+.timeline-period { font-size: 0.82rem; color: var(--flutter-blue); font-weight: 600; letter-spacing: 0.05em; }
+.timeline-company { font-size: 1.25rem; font-weight: 800; color: var(--text); margin: 6px 0 4px; }
+.timeline-role { font-size: 0.95rem; color: var(--text2); font-weight: 500; margin-bottom: 16px; }
+.timeline-items { list-style: none; margin-bottom: 16px; }
+.timeline-items li { color: var(--text2); font-size: 0.9rem; line-height: 1.7; padding-left: 16px; position: relative; margin-bottom: 6px; }
+.timeline-items li::before { content: '▸'; position: absolute; left: 0; color: var(--flutter-blue); }
+
+/* ===================== TAGS ===================== */
+.timeline-tags, .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background: rgba(84,197,248,0.1); color: var(--flutter-blue); border: 1px solid rgba(84,197,248,0.25); border-radius: 6px; padding: 3px 10px; font-size: 0.78rem; font-weight: 500; }
+
+/* ===================== PROJECTS ===================== */
+.projects { background: var(--bg) !important; }
+.filter-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-tab { background: transparent; border: 1px solid var(--border); border-radius: 8px; padding: 8px 18px; font-size: 0.85rem; color: var(--text2); cursor: pointer; transition: all var(--transition); }
+.filter-tab.active, .filter-tab:hover { background: rgba(84,197,248,0.1); border-color: var(--flutter-blue); color: var(--flutter-blue); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.project-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px; cursor: pointer; transition: all var(--transition); border-top: 3px solid var(--accent);
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); border-color: var(--accent); border-top: 3px solid var(--accent); }
+.project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.project-emoji { font-size: 1.6rem; }
+.project-period { font-size: 0.78rem; color: var(--text2); }
+.project-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.project-desc { color: var(--text2); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px; }
+.project-details { list-style: none; margin-bottom: 16px; overflow: hidden; }
+.project-details li { color: var(--text2); font-size: 0.85rem; line-height: 1.7; padding-left: 14px; position: relative; margin-bottom: 4px; }
+.project-details li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+.project-expand-hint { font-size: 0.75rem; color: var(--text2); text-align: right; margin-top: 12px; }
+
+/* ===================== CONTACT ===================== */
+.contact { background: var(--bg2) !important; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 600px; margin: 0 auto; }
+.contact-card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 32px 24px; display: flex; flex-direction: column; align-items: center;
+  gap: 8px; text-decoration: none; transition: all var(--transition);
+}
+.contact-card:hover { border-color: var(--flutter-blue); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(84,197,248,0.15); }
+.contact-icon { font-size: 2rem; }
+.contact-label { font-size: 0.8rem; color: var(--text2); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.contact-value { font-size: 0.9rem; color: var(--flutter-blue); font-weight: 500; text-align: center; }
+
+/* ===================== FOOTER ===================== */
+.footer { background: var(--bg); color: var(--text2); text-align: center; padding: 28px; font-size: 0.85rem; border-top: 1px solid var(--border); }
+.heart { color: #fc5c65; }
+.footer-copy { margin-top: 6px; font-size: 0.78rem; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .navbar { padding: 14px 20px; }
+  .nav-links { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--nav-bg); backdrop-filter: blur(12px); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .hero { flex-direction: column; padding: 100px 24px 80px; gap: 40px; text-align: center; }
+  .hero-cta { justify-content: center; }
+  .hero-visual { order: -1; }
+  .phone-mockup { width: 160px; height: 300px; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  .stat-card:last-child { grid-column: 1 / -1; }
+  .timeline { padding-left: 24px; }
+  section.section { padding: 64px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
