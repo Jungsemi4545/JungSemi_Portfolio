@@ -13,7 +13,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['about', 'skills', 'experience', 'projects', 'contact'];
+  const navLinks = ['about', 'skills', 'experience', 'projects', 'archiving', 'contact'];
+  const navLabels = { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', archiving: 'Archiving', contact: 'Contact' };
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isDark ? 'dark' : 'light'}`}>
@@ -22,23 +23,15 @@ const Navbar = () => {
         <span className="logo-text">Dev</span>
         <span className="logo-bracket"> /&gt;</span>
       </div>
-
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {navLinks.map(link => (
           <li key={link}>
-            <Link
-              to={link}
-              smooth={true}
-              duration={600}
-              offset={-70}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.charAt(0).toUpperCase() + link.slice(1)}
+            <Link to={link} smooth={true} duration={600} offset={-70} onClick={() => setMenuOpen(false)}>
+              {navLabels[link]}
             </Link>
           </li>
         ))}
       </ul>
-
       <div className="nav-right">
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           {isDark ? '☀️' : '🌙'}
