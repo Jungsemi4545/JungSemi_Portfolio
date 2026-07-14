@@ -4,11 +4,11 @@ import { useInView } from 'react-intersection-observer';
 import { useTheme } from '../context/ThemeContext';
 
 const infoItems = [
-  { icon: '👤', label: '이름', value: 'Your Name' },
+  { icon: '👤', label: '이름', value: 'NAME' },
   { icon: '📞', label: '연락처', value: '010-0000-0000' },
-  { icon: '✉️', label: '이메일', value: 'your.email@example.com' },
+  { icon: '✉️', label: '이메일', value: 'email@gmail.com' },
   { icon: '📍', label: '위치', value: '서울특별시' },
-  { icon: '🎓', label: '학력', value: '00대학교 00학과' },
+  { icon: '🎓', label: '학력', value: '명지전문대학교 정보통신공학과' },
 ];
 
 const About = () => {
@@ -42,7 +42,7 @@ const About = () => {
             {/* 통계 카드 */}
             <div className="about-stats">
               {[
-                { number: '3+', label: '년 경력' },
+                { number: '4+', label: '년 경력' },
                 { number: '5+', label: '프로젝트' },
                 { number: '4', label: '플랫폼\nMobile·Tablet·Desktop·Web' },
               ].map((stat, i) => (
