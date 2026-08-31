@@ -15,18 +15,9 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <Navbar />
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Archiving />
-        <Contact />
-        <Footer />
+        <Navbar /><Hero /><About /><Skills /><Experience /><Projects /><Archiving /><Contact /><Footer />
       </div>
     </ThemeProvider>
   );
 }
-
 export default App;
