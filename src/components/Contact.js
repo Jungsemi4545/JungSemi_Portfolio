@@ -15,11 +15,10 @@ const Contact = () => {
           <div className="title-underline"></div>
           <p className="section-sub">함께 일하고 싶으시다면 편하게 연락주세요</p>
         </motion.div>
-
         <motion.div className="contact-grid" initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }}>
           {[
-            { icon: '✉️', label: 'Email', value: 'your.email@example.com', href: 'mailto:your.email@example.com' },
-            { icon: '🐙', label: 'GitHub', value: 'github.com/yourusername', href: 'https://github.com/yourusername' },
+            { icon: '✉️', label: 'Email', value: 'sm1860sm@gmail.com', href: 'mailto:sm1860sm@gmail.com' },
+            { icon: '🐙', label: 'GitHub', value: 'github.com/Jungsemi4545', href: 'https://github.com/Jungsemi4545' },
           ].map((item, i) => (
             <a href={item.href} className="contact-card" key={i} target="_blank" rel="noopener noreferrer">
               <span className="contact-icon">{item.icon}</span>
@@ -32,5 +31,4 @@ const Contact = () => {
     </section>
   );
 };
-
 export default Contact;

@@ -8,40 +8,41 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const h = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', h);
+    return () => window.removeEventListener('scroll', h);
   }, []);
 
-  const navLinks = ['about', 'skills', 'experience', 'projects', 'archiving', 'contact'];
-  const navLabels = { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', archiving: 'Archiving', contact: 'Contact' };
+  const links = [
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'archiving', label: 'Archiving' },
+    { id: 'contact', label: 'Contact' },
+  ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isDark ? 'dark' : 'light'}`}>
       <div className="nav-logo">
         <span className="logo-bracket">&lt;</span>
-        <span className="logo-text">Dev</span>
+        <span className="logo-text">정세미</span>
         <span className="logo-bracket"> /&gt;</span>
       </div>
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        {navLinks.map(link => (
-          <li key={link}>
-            <Link to={link} smooth={true} duration={600} offset={-70} onClick={() => setMenuOpen(false)}>
-              {navLabels[link]}
-            </Link>
+        {links.map(l => (
+          <li key={l.id}>
+            <Link to={l.id} smooth duration={600} offset={-70} onClick={() => setMenuOpen(false)}>{l.label}</Link>
           </li>
         ))}
       </ul>
       <div className="nav-right">
-        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-          {isDark ? '☀️' : '🌙'}
-        </button>
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
-          <span></span><span></span><span></span>
+        <button className="theme-toggle" onClick={toggleTheme}>{isDark ? '☀️' : '🌙'}</button>
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <span /><span /><span />
         </button>
       </div>
     </nav>
   );
 };
-
 export default Navbar;
