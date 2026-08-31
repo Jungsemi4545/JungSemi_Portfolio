@@ -4,14 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { useTheme } from '../context/ThemeContext';
 
 const archives = [
-  {
-    icon: '🐙',
-    title: 'GitHub',
-    desc: '소스 코드 저장소',
-    url: 'https://github.com/yourusername',
-    label: 'github.com/yourusername',
-    color: '#54C5F8',
-  },
+  { icon: '🐙', title: 'GitHub', desc: '소스 코드 및 개인 프로젝트 저장소', url: 'https://github.com/Jungsemi4545', label: 'github.com/Jungsemi4545', color: '#54C5F8' },
 ];
 
 const Archiving = () => {
@@ -26,20 +19,9 @@ const Archiving = () => {
           <div className="title-underline"></div>
           <p className="section-sub">코드 저장소 및 활동 링크</p>
         </motion.div>
-
         <div className="archiving-grid">
           {archives.map((item, i) => (
-            <motion.a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="archive-card"
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              style={{ '--accent': item.color }}
-            >
+            <motion.a href={item.url} target="_blank" rel="noopener noreferrer" className="archive-card" key={i} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.15 }} style={{ '--accent': item.color }}>
               <div className="archive-icon">{item.icon}</div>
               <div className="archive-body">
                 <h3 className="archive-title">{item.title}</h3>
@@ -54,5 +36,4 @@ const Archiving = () => {
     </section>
   );
 };
-
 export default Archiving;

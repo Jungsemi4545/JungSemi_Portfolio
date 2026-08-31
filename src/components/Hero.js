@@ -6,16 +6,16 @@ import { useTheme } from '../context/ThemeContext';
 const Hero = () => {
   const { isDark } = useTheme();
   const [displayed, setDisplayed] = useState('');
-  const fullText = 'Flutter App Developer';
+  const fullText = '크로스 플랫폼 & 풀스택 개발자';
 
   useEffect(() => {
     let i = 0;
-    const timer = setInterval(() => {
+    const t = setInterval(() => {
       setDisplayed(fullText.slice(0, i + 1));
       i++;
-      if (i >= fullText.length) clearInterval(timer);
-    }, 70);
-    return () => clearInterval(timer);
+      if (i >= fullText.length) clearInterval(t);
+    }, 80);
+    return () => clearInterval(t);
   }, []);
 
   return (
@@ -27,19 +27,22 @@ const Hero = () => {
       </div>
       <div className="hero-content">
         <motion.p className="hero-greeting" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          안녕하세요, 저는
+          👋 안녕하세요, 저는
         </motion.p>
         <motion.h1 className="hero-name" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-          Your Name
+          정세미
         </motion.h1>
         <motion.h2 className="hero-title" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-          <span className="typed-text">{displayed}</span>
-          <span className="cursor">|</span>
+          <span className="typed-text">{displayed}</span><span className="cursor">|</span>
         </motion.h2>
-        <motion.p className="hero-bio" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.8 }}>
-          Flutter로 모바일, 태블릿, 데스크톱, 웹을 아우르는<br />크로스플랫폼 앱을 개발합니다.
+        <motion.blockquote className="hero-quote" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }}>
+          "사용자의 문제를 해결하고, 효율적인 아키텍처를 설계하는 개발자입니다."
+        </motion.blockquote>
+        <motion.p className="hero-bio" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.9 }}>
+          Flutter를 활용한 멀티 플랫폼 어플리케이션 개발을 주력으로 하며,<br />
+          Python(Flask) 백엔드부터 ComfyUI AI 데이터 가공까지 서비스 전반을 다룹니다.
         </motion.p>
-        <motion.div className="hero-cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1 }}>
+        <motion.div className="hero-cta" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.1 }}>
           <Link to="projects" smooth duration={600} offset={-70}><button className="btn-primary">프로젝트 보기</button></Link>
           <Link to="contact" smooth duration={600} offset={-70}><button className="btn-outline">연락하기</button></Link>
         </motion.div>
@@ -47,7 +50,7 @@ const Hero = () => {
       <motion.div className="hero-visual" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3 }}>
         <div className="phone-mockup">
           <div className="phone-screen">
-            <div className="app-bar"><span>MyApp</span></div>
+            <div className="app-bar"><span>Flutter App</span></div>
             <div className="app-content">
               <div className="card-item"></div>
               <div className="card-item short"></div>
@@ -65,5 +68,4 @@ const Hero = () => {
     </section>
   );
 };
-
 export default Hero;
